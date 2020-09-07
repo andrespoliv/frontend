@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import './App.css';
+import CreateProduct from './screens/createProduct';
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <BrowserRouter>
+    <div className="grid-container">
+      <header className="header">
+          <div className="brand">
+              <button>
+                  &#9776;
+              </button>
+              <img className="logo" src="../assets/logo_1.svg" alt="logo"></img>
+              <div>
+                Clothing store
+              </div>
+          </div>
+        
       </header>
+      
+      <main className="main">
+          <div className="content">
+          <Route path="/" component={CreateProduct}/>
+          </div>
+      </main> 
+      <footer className="footer">
+          Made by Andrés Peña Olivares, for Rokket Labs job application purposes only.
+      </footer>
     </div>
+    </BrowserRouter>
   );
 }
 
